@@ -141,6 +141,9 @@ impl super::wasi_ephemeral_crypto_symmetric::WasiEphemeralCryptoSymmetric for Wa
 
     // --- state
 
+    //fn symmetric_state_clone(&self) -> Result<guest_types::SymmetricState, guest_types::CryptoErrno> {
+    //}
+
     fn symmetric_state_open(
         &mut self,
         alg_str: &wiggle::GuestPtr<'_, str>,

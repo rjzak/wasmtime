@@ -252,8 +252,7 @@ impl From<guest_types::KeypairEncoding> for KeyPairEncoding {
             guest_types::KeypairEncoding::Pkcs8 => KeyPairEncoding::Pkcs8,
             guest_types::KeypairEncoding::Pem => KeyPairEncoding::Pem,
             guest_types::KeypairEncoding::Local => KeyPairEncoding::Local,
-            guest_types::KeypairEncoding::CompressedPkcs8 => todo!(),
-            guest_types::KeypairEncoding::CompressedPem => todo!(),
+            _ => todo!(),
         }
     }
 }
@@ -265,10 +264,9 @@ impl From<guest_types::PublickeyEncoding> for PublicKeyEncoding {
             guest_types::PublickeyEncoding::Pkcs8 => PublicKeyEncoding::Pkcs8,
             guest_types::PublickeyEncoding::Pem => PublicKeyEncoding::Pem,
             guest_types::PublickeyEncoding::Sec => PublicKeyEncoding::Sec,
-            guest_types::PublickeyEncoding::CompressedSec => PublicKeyEncoding::CompressedSec,
+            //guest_types::PublickeyEncoding::CompressedSec => PublicKeyEncoding::CompressedSec,
             guest_types::PublickeyEncoding::Local => PublicKeyEncoding::Local,
-            guest_types::PublickeyEncoding::CompressedPkcs8 => todo!(),
-            guest_types::PublickeyEncoding::CompressedPem => todo!(),
+            _ => todo!(),
         }
     }
 }
@@ -282,6 +280,7 @@ impl From<guest_types::SecretkeyEncoding> for SecretKeyEncoding {
             guest_types::SecretkeyEncoding::Sec => SecretKeyEncoding::Sec,
             //guest_types::SecretkeyEncoding::CompressedSec => SecretKeyEncoding::CompressedSec,
             guest_types::SecretkeyEncoding::Local => SecretKeyEncoding::Local,
+            _ => todo!(),
         }
     }
 }

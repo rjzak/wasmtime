@@ -3115,7 +3115,7 @@ dependencies = [
 [[package]]
 name = "wasi-crypto"
 version = "0.1.5"
-source = "git+https://github.com/rjzak/wasi-crypto?branch=boring_and_rustcrypto_rsa#284ad2795afebb59c4cfd5260b683ccb1b8cb1d1"
+source = "git+https://github.com/WebAssembly/wasi-crypto?rev=fa309ac#fa309ace2bb335bb08efc724a18721e8217d5977"
 dependencies = [
  "aes-gcm",
  "anyhow",

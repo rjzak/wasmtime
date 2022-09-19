@@ -69,6 +69,9 @@ pub(crate) mod aarch64;
 #[cfg(feature = "s390x")]
 mod s390x;
 
+#[cfg(feature = "powerpc64le")]
+pub mod powerpc64le;
+
 pub mod unwind;
 
 mod call_conv;
@@ -97,6 +100,7 @@ pub fn lookup(triple: Triple) -> Result<Builder, LookupError> {
         }
         Architecture::Aarch64 { .. } => isa_builder!(aarch64, (feature = "arm64"), triple),
         Architecture::S390x { .. } => isa_builder!(s390x, (feature = "s390x"), triple),
+        Architecture::Powerpc64le => isa_builder!(powerpc64le, (features = "powerpc64le"), triple),
         _ => Err(LookupError::Unsupported),
     }
 }

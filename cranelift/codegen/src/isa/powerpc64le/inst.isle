@@ -1,0 +1,40 @@
+;; Instruction formats
+(type MInst
+    (enum
+        ;;; Equivalent to `ori 0,0,0`.
+        ;;; PowerISA 3.0B Book 1 Appendix C
+        (Nop)
+
+        ;;; Equivalent to `xori 0,0,0`. Unlike the prior `nop`,
+        ;;; this will consume execution resources.
+        ;;; PowerISA 3.0B Book 1 Appendix C
+        (NopX)
+
+        ;; An ALU operation with two register sources and a register destination.
+       (AluRRR
+         (alu_op ALUOp)
+         (size OperandSize)
+         (rd WritableReg)
+         (rn Reg)
+         (rm Reg))
+
+       ;; An ALU operation with a register source and an immediate, and a register
+       ;; destination.
+       (AluRRImm
+         (alu_op ALUOp)
+         (size OperandSize)
+         (rd WritableReg)
+         (rn Reg)
+         (imm Imm))
+    ))
+
+;; An ALU operation. This can be paired with several instruction formats
+;; below (see `Inst`) in any combination.
+(type ALUOp
+    (enum
+        (Add)
+        (Addi)
+        (Subf)
+    )
+
+)

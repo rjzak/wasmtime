@@ -186,6 +186,8 @@ cfg_if::cfg_if! {
         mod x86;
     } else if #[cfg(target_arch = "arm")] {
         mod arm;
+    } else if #[cfg(target_arch = "powerpc64le")] {
+        mod powerpc64le;
     } else if #[cfg(target_arch = "s390x")] {
         // currently `global_asm!` isn't stable on s390x so this is an external
         // assembler file built with the `build.rs`.
